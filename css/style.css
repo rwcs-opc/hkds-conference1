@@ -2,24 +2,31 @@
 
 /* --- CUSTOM VARIABLES --- */
 :root {
-  --primary-dark: #061e18;      /* Deep Forest Green */
+  --primary-dark: #061e18;
+  /* Deep Forest Green */
   --primary-dark-rgb: 6, 30, 24;
-  --primary-emerald: #0f8a5f;   /* Emerald Green */
+  --primary-emerald: #0f8a5f;
+  /* Emerald Green */
   --primary-emerald-rgb: 15, 138, 95;
-  --accent-teal: #0d9488;       /* Teal */
+  --accent-teal: #0d9488;
+  /* Teal */
   --accent-teal-rgb: 13, 148, 136;
-  --accent-gold: #cfa846;       /* Soft Gold */
+  --accent-gold: #cfa846;
+  /* Soft Gold */
   --accent-gold-rgb: 207, 168, 70;
-  --bg-ivory: #faf9f6;          /* Ivory / Off-white */
+  --bg-ivory: #faf9f6;
+  /* Ivory / Off-white */
   --bg-light-rgb: 250, 249, 246;
   --bg-card: #ffffff;
-  --text-charcoal: #1e293b;     /* Slate 800 */
-  --text-muted: #64748b;        /* Slate 500 */
+  --text-charcoal: #1e293b;
+  /* Slate 800 */
+  --text-muted: #64748b;
+  /* Slate 500 */
   --white: #ffffff;
   --white-rgb: 255, 255, 255;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
   --font-serif: 'Lora', serif;
-  
+
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 30px rgba(6, 30, 24, 0.06);
   --shadow-lg: 0 20px 40px rgba(6, 30, 24, 0.1);
@@ -29,6 +36,8 @@
   --border-radius-md: 16px;
   --border-radius-lg: 24px;
 }
+
+error
 
 /* --- RESET & BASIC STYLES --- */
 * {
@@ -54,13 +63,16 @@ body {
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-ivory);
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(15, 138, 95, 0.3);
   border-radius: 5px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-emerald);
 }
@@ -85,7 +97,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(rgba(15, 138, 95, 0.03) 1.5px, transparent 1.5px),
     radial-gradient(rgba(15, 138, 95, 0.03) 1.5px, transparent 1.5px);
   background-size: 40px 40px;
@@ -265,7 +277,8 @@ section {
 .logo-abbr {
   font-size: 1.4rem;
   font-weight: 800;
-  color: var(--white); /* Light by default */
+  color: var(--white);
+  /* Light by default */
   letter-spacing: 0.05em;
   line-height: 1;
   transition: var(--transition-smooth);
@@ -274,7 +287,8 @@ section {
 .logo-full {
   font-size: 0.7rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.65); /* Light by default */
+  color: rgba(255, 255, 255, 0.65);
+  /* Light by default */
   letter-spacing: 0.02em;
   margin-top: 0.15rem;
   transition: var(--transition-smooth);
@@ -290,7 +304,8 @@ section {
 .nav-link {
   font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85); /* Light by default */
+  color: rgba(255, 255, 255, 0.85);
+  /* Light by default */
   text-decoration: none;
   position: relative;
   padding: 0.5rem 0;
@@ -298,7 +313,8 @@ section {
 }
 
 .nav-link:hover {
-  color: var(--accent-gold); /* Gold hover at top */
+  color: var(--accent-gold);
+  /* Gold hover at top */
 }
 
 .nav-link::after {
@@ -308,7 +324,8 @@ section {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--accent-gold); /* Gold active at top */
+  background-color: var(--accent-gold);
+  /* Gold active at top */
   transition: var(--transition-fast);
 }
 
@@ -318,7 +335,8 @@ section {
 }
 
 .nav-link.active {
-  color: var(--accent-gold); /* Gold active at top */
+  color: var(--accent-gold);
+  /* Gold active at top */
 }
 
 .nav-actions {
@@ -342,7 +360,8 @@ section {
   width: 25px;
   height: 2px;
   margin: 5px auto;
-  background-color: var(--white); /* Light by default */
+  background-color: var(--white);
+  /* Light by default */
   transition: var(--transition-fast);
 }
 
@@ -421,12 +440,10 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(6, 30, 24, 0.9) 0%,
-    rgba(6, 30, 24, 0.75) 50%,
-    rgba(6, 30, 24, 0.95) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(6, 30, 24, 0.9) 0%,
+      rgba(6, 30, 24, 0.75) 50%,
+      rgba(6, 30, 24, 0.95) 100%);
   z-index: 1;
 }
 
@@ -1564,7 +1581,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: 
+  background:
     radial-gradient(circle, rgba(15, 138, 95, 0.08) 10%, transparent 60%),
     linear-gradient(rgba(15, 138, 95, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(15, 138, 95, 0.02) 1px, transparent 1px);
@@ -1642,8 +1659,8 @@ section {
 }
 
 /* Float label styles */
-.form-input:focus ~ .form-label,
-.form-input:not(:placeholder-shown) ~ .form-label {
+.form-input:focus~.form-label,
+.form-input:not(:placeholder-shown)~.form-label {
   top: -0.75rem;
   font-size: 0.75rem;
   font-weight: 700;
@@ -1849,14 +1866,29 @@ textarea.form-input {
 
 /* --- ANIMATION KEYFRAMES --- */
 @keyframes float-around {
-  0% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-30px) scale(1.05); }
-  100% { transform: translateY(0) scale(1); }
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes ping-marker {
-  0% { transform: scale(0.5); opacity: 1; }
-  100% { transform: scale(1.8); opacity: 0; }
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
 }
 
 /* Intersection Observer Animations */
@@ -1877,67 +1909,67 @@ textarea.form-input {
   html {
     font-size: 15px;
   }
-  
+
   .container {
     padding: 0 1.5rem;
   }
-  
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  
+
   .stat-item {
     border-right: none;
   }
-  
+
   .stat-item:nth-child(odd) {
     border-right: 1px solid rgba(15, 138, 95, 0.1);
   }
-  
+
   .about-grid {
     gap: 3rem;
   }
-  
+
   .focus-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-  
+
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-  
+
   .products-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  
+
   .product-card {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .events-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-  
+
   .why-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-  
+
   .partners-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: 3rem;
   }
-  
+
   .footer-brand-col {
     grid-column: span 3;
     margin-bottom: 1.5rem;
@@ -1948,16 +1980,16 @@ textarea.form-input {
   section {
     padding: 5rem 0;
   }
-  
+
   .section-title {
     font-size: 2.1rem;
   }
-  
+
   /* Navigation Hamburger */
   .hamburger-toggle {
     display: block;
   }
-  
+
   .nav-menu {
     position: fixed;
     top: 0;
@@ -1973,121 +2005,134 @@ textarea.form-input {
     transition: var(--transition-smooth);
     z-index: 1005;
   }
-  
+
   .nav-menu.active {
     right: 0;
   }
-  
+
   .nav-menu .nav-link {
     font-size: 1.1rem;
     width: 100%;
     color: var(--primary-dark);
   }
-  
+
   .nav-menu .nav-link:hover,
   .nav-menu .nav-link.active {
     color: var(--primary-emerald);
   }
-  
+
   .nav-menu .nav-link::after {
     background-color: var(--primary-emerald);
   }
-  
+
   .nav-actions {
-    display: none; /* Hide button in mobile header */
+    display: none;
+    /* Hide button in mobile header */
   }
-  
+
   /* Add button inside mobile menu drawer instead */
   .nav-menu .mobile-nav-btn {
     margin-top: 1rem;
     width: 100%;
   }
-  
+
   .hamburger-toggle.active .hamburger-line:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
-  
+
   .hamburger-toggle.active .hamburger-line:nth-child(2) {
     opacity: 0;
   }
-  
+
   .hamburger-toggle.active .hamburger-line:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
-  
+
   /* Hero */
   .hero-title {
     font-size: 2.8rem;
   }
-  
+
   .hero-description {
     font-size: 1.1rem;
   }
-  
+
   /* About Collage Layout Change */
   .about-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
-  
+
   .about-collage {
     height: 380px;
     max-width: 500px;
     margin: 0 auto;
   }
-  
-  .collage-card-1 { height: 200px; }
-  .collage-card-2 { height: 150px; top: 30px; }
-  .collage-card-3 { height: 160px; }
-  .collage-card-4 { height: 140px; }
-  
+
+  .collage-card-1 {
+    height: 200px;
+  }
+
+  .collage-card-2 {
+    height: 150px;
+    top: 30px;
+  }
+
+  .collage-card-3 {
+    height: 160px;
+  }
+
+  .collage-card-4 {
+    height: 140px;
+  }
+
   .vm-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .focus-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .product-card {
     grid-template-columns: 1fr;
   }
-  
+
   .product-img-box {
     min-height: 220px;
   }
-  
+
   .events-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .why-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .partners-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
   }
-  
+
   .footer-brand-col {
     grid-column: span 2;
   }
-  
+
   .footer-bottom-wrapper {
     flex-direction: column;
     gap: 1.5rem;
@@ -2099,52 +2144,64 @@ textarea.form-input {
   html {
     font-size: 14px;
   }
-  
+
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .stat-item {
     border-right: none;
     border-bottom: 1px solid rgba(15, 138, 95, 0.1);
   }
-  
+
   .stat-item:last-child {
     border-bottom: none;
   }
-  
+
   .hero-title {
     font-size: 2.4rem;
   }
-  
+
   .hero-buttons {
     flex-direction: column;
   }
-  
+
   .btn {
     width: 100%;
   }
-  
+
   .about-collage {
     height: 300px;
   }
-  
-  .collage-card-1 { height: 160px; }
-  .collage-card-2 { height: 120px; top: 20px; }
-  .collage-card-3 { height: 130px; }
-  .collage-card-4 { height: 110px; }
-  
+
+  .collage-card-1 {
+    height: 160px;
+  }
+
+  .collage-card-2 {
+    height: 120px;
+    top: 20px;
+  }
+
+  .collage-card-3 {
+    height: 130px;
+  }
+
+  .collage-card-4 {
+    height: 110px;
+  }
+
   .partner-logo-card {
     min-height: 90px;
     padding: 1.5rem 1rem;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  
+
   .footer-brand-col {
     grid-column: span 1;
   }
@@ -2155,11 +2212,13 @@ textarea.form-input {
   html {
     scroll-behavior: auto;
   }
+
   .reveal-element {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
   }
+
   .hero-bg-img,
   .hero-particle,
   .collage-img-card,
