@@ -265,17 +265,19 @@ section {
 .logo-abbr {
   font-size: 1.4rem;
   font-weight: 800;
-  color: var(--primary-dark);
+  color: var(--white); /* Light by default */
   letter-spacing: 0.05em;
   line-height: 1;
+  transition: var(--transition-smooth);
 }
 
 .logo-full {
   font-size: 0.7rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.65); /* Light by default */
   letter-spacing: 0.02em;
   margin-top: 0.15rem;
+  transition: var(--transition-smooth);
 }
 
 .nav-menu {
@@ -288,7 +290,7 @@ section {
 .nav-link {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.85); /* Light by default */
   text-decoration: none;
   position: relative;
   padding: 0.5rem 0;
@@ -296,7 +298,7 @@ section {
 }
 
 .nav-link:hover {
-  color: var(--primary-emerald);
+  color: var(--accent-gold); /* Gold hover at top */
 }
 
 .nav-link::after {
@@ -306,7 +308,7 @@ section {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--primary-emerald);
+  background-color: var(--accent-gold); /* Gold active at top */
   transition: var(--transition-fast);
 }
 
@@ -316,7 +318,7 @@ section {
 }
 
 .nav-link.active {
-  color: var(--primary-emerald);
+  color: var(--accent-gold); /* Gold active at top */
 }
 
 .nav-actions {
@@ -340,8 +342,37 @@ section {
   width: 25px;
   height: 2px;
   margin: 5px auto;
-  background-color: var(--primary-dark);
+  background-color: var(--white); /* Light by default */
   transition: var(--transition-fast);
+}
+
+/* Dynamic scrolled state colors */
+.header-nav.scrolled .logo-abbr {
+  color: var(--primary-dark);
+}
+
+.header-nav.scrolled .logo-full {
+  color: var(--text-muted);
+}
+
+.header-nav.scrolled .nav-link {
+  color: var(--primary-dark);
+}
+
+.header-nav.scrolled .nav-link:hover {
+  color: var(--primary-emerald);
+}
+
+.header-nav.scrolled .nav-link.active {
+  color: var(--primary-emerald);
+}
+
+.header-nav.scrolled .nav-link::after {
+  background-color: var(--primary-emerald);
+}
+
+.header-nav.scrolled .hamburger-line {
+  background-color: var(--primary-dark);
 }
 
 /* Scroll progress indicator */
@@ -1947,9 +1978,19 @@ textarea.form-input {
     right: 0;
   }
   
-  .nav-link {
+  .nav-menu .nav-link {
     font-size: 1.1rem;
     width: 100%;
+    color: var(--primary-dark);
+  }
+  
+  .nav-menu .nav-link:hover,
+  .nav-menu .nav-link.active {
+    color: var(--primary-emerald);
+  }
+  
+  .nav-menu .nav-link::after {
+    background-color: var(--primary-emerald);
   }
   
   .nav-actions {
