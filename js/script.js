@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     
     // 1. Sticky navbar toggle
-    if (scrollPos > 50) {
+    if (scrollPos > 30) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
@@ -30,31 +30,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // 3. Scroll-to-top button visibility
-    if (scrollPos > 500) {
+    if (scrollPos > 400) {
       scrollTopBtn.classList.add('visible');
     } else {
       scrollTopBtn.classList.remove('visible');
     }
+  });
+  
+  // --- ACTIVE PAGE MENU ITEM INDICATOR ---
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+  
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    const href = link.getAttribute('href');
     
-    // 4. Scrollspy Active Navigation Indicator
-    let currentSection = 'home';
-    const sections = document.querySelectorAll('section, header');
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.offsetHeight;
-      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-        currentSection = section.getAttribute('id') || 'home';
-      }
-    });
-    
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      const href = link.getAttribute('href');
-      if (href === `#${currentSection}` || (href === '#' && currentSection === 'home')) {
+    // Exact file matching
+    if (currentPage === '' || currentPage === 'index.html') {
+      if (href === 'index.html' || href === './' || href === '/') {
         link.classList.add('active');
       }
-    });
+    } else {
+      if (href && href === currentPage) {
+        link.classList.add('active');
+      }
+    }
   });
   
   // --- MOBILE SIDEBAR NAVIGATION ---
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // --- STATISTIC COUNTER ANIMATION ---
+  // --- STATISTIC COUNTER ANIMATION (index.html) ---
   if (statNumbers.length > 0) {
     const counterObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
           const target = entry.target;
           const targetVal = parseInt(target.getAttribute('data-target'), 10);
           let startVal = 0;
-          const duration = 1500; // 1.5s duration
-          const increment = targetVal / (duration / 16); // ~60fps
+          const duration = 1200; // 1.2s duration
+          const increment = targetVal / (duration / 16);
           
           const updateCounter = () => {
             startVal += increment;
@@ -105,15 +105,15 @@ document.addEventListener('DOMContentLoaded', () => {
           };
           
           updateCounter();
-          observer.unobserve(target); // Only animate once
+          observer.unobserve(target);
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
     
     statNumbers.forEach(num => counterObserver.observe(num));
   }
   
-  // --- FAQ ACCORDION ---
+  // --- FAQ ACCORDION (faq.html) ---
   faqItems.forEach(item => {
     const headerBtn = item.querySelector('.faq-header');
     const bodyContainer = item.querySelector('.faq-body');
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-  // --- CONTACT FORM HANDLER ---
+  // --- CONTACT FORM HANDLER (contact.html) ---
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -165,14 +165,13 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = false;
         submitBtn.textContent = originalBtnText;
         
-        // Show success alert modal
+        // Show success notice
         if (formFeedback) {
           formFeedback.classList.add('success');
           formFeedback.innerHTML = `
             <i class="fas fa-check-circle"></i> Thank you, ${name}! Your message has been sent successfully. We will get back to you soon.
           `;
           
-          // Clear inputs
           contactForm.reset();
           
           // Focus state labels reset
@@ -180,12 +179,10 @@ document.addEventListener('DOMContentLoaded', () => {
           inputs.forEach(input => {
             const label = input.nextElementSibling;
             if (label && label.classList.contains('form-label')) {
-              // Trigger input state clean-up
-              input.dispatchEvent(new Event('input'));
+              input.removeAttribute('placeholder-shown');
             }
           });
           
-          // Hide alert after 8 seconds
           setTimeout(() => {
             formFeedback.classList.remove('success');
             formFeedback.innerHTML = '';
@@ -194,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1500);
     });
     
-    // Auto float-labels checker for preset values or autocomplete
+    // Auto float-labels checker for preset values
     const formInputs = contactForm.querySelectorAll('.form-input');
     formInputs.forEach(input => {
       const checkValue = () => {
@@ -207,12 +204,11 @@ document.addEventListener('DOMContentLoaded', () => {
       
       input.addEventListener('input', checkValue);
       input.addEventListener('blur', checkValue);
-      // Run once on load
       checkValue();
     });
   }
   
-  // --- REVEAL-ON-SCROLL SYSTEM USING INTERSECTION OBSERVER ---
+  // --- REVEAL-ON-SCROLL SYSTEM ---
   const revealElements = document.querySelectorAll('.reveal-element');
   if (revealElements.length > 0) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -222,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
     
     revealElements.forEach(el => revealObserver.observe(el));
   }
